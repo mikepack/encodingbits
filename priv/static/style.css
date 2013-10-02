@@ -1,0 +1,92 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+a, a:link, a:hover, a:active {
+  color: #474747;
+}
+
+a:visited {
+  color: #b5b5b5;
+}
+
+.main {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 60px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 5px;
+}
+
+.titles {
+  float: left;
+}
+
+.title {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: Helvetica;
+}
+
+.title a, .title a:link, .title a:visited, .title a:hover, .title a:active {
+  text-decoration: none;
+  color: #474747;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-family: Georgia;
+  color: #8f8f8f;
+}
+
+.about {
+  float: right;
+  max-width: 130px;
+  font-family: Georgia;
+}
+
+.body {
+  font-family: Verdana;
+  font-size: 13px;
+  margin: 10px 5px;
+  padding: 5px 0;
+  color: #474747;
+}
+
+.body h1 {
+  margin-top: 0;
+  font-size: 17px;
+}
+
+.body .published-on {
+  font-style: italic;
+}
+
+.footer {
+  border-top: 1px solid #e0e0e0;
+  color: #8f8f8f;
+}
+
+.contact {
+  text-align: center;
+  padding: 10px;
+}
+
+.four-oh-four {
+  font-size: 25px;
+  font-weight: bold;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.four-oh-four .code {
+  color: red;
+}

@@ -2,6 +2,8 @@ defmodule EncodingBits.Dynamo do
   use Dynamo
 
   config :dynamo,
+    root: Path.expand("../../..", __FILE__),
+
     # The environment this Dynamo runs on
     env: Mix.env,
 
@@ -25,5 +27,7 @@ defmodule EncodingBits.Dynamo do
   # Default functionality available in templates
   templates do
     use Dynamo.Helpers
+    import EncodingBits.Helpers
+    import Dynamo.ViewHelpers
   end
 end

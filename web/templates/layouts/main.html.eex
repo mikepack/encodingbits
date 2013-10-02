@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Encoding Bits <%= page_title %></title>
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <%= stylesheet_link_tag "style" %>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="titles">
+        <div class="title"><a href="/">Encoding Bits</a></div>
+        <div class="subtitle">Musing of a software engineer.</div>
+      </div>
+      <div class="about">A short-form blog by <a href="http://www.twitter.com/zombidev" target="_blank">Mike Pack</a>.</div>
+    </div>
+    <div class="body">
+      <%= content_for(:template) %>
+    </div>
+    <div class="footer">
+      <div class="contact">
+        If you have comments, get in touch <a href="http://www.twitter.com/zombidev" target="_blank">on twitter</a>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
