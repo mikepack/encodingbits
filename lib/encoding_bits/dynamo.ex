@@ -15,7 +15,10 @@ defmodule EncodingBits.Dynamo do
 
     # The route from which static assets are served
     # You can turn off static assets by setting it to false
-    static_route: "/static"
+    static_route: "/",
+
+    raw_articles_path: Path.expand("../../../articles/published", __FILE__),
+    published_articles_path: Path.expand("../../../priv/published_articles", __FILE__)
 
   # Uncomment the lines below to enable the cookie session store
   # config :dynamo,

@@ -15,10 +15,7 @@ config :dynamo,
 
   # Show a nice debugging exception page
   # in development
-  exceptions_handler: Exceptions.Debug,
-
-  raw_articles_path: Path.expand("../../../articles/published", __FILE__),
-  published_articles_path: Path.expand("../../../priv/published_articles", __FILE__)
+  exceptions_handler: Exceptions.Debug
 
 # Run on port 4000 for development
 config :server, port: 4000
