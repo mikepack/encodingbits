@@ -4,6 +4,7 @@
   <title>Encoding Bits <%= page_title %></title>
   <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <link href="http://feeds.feedburner.com/EncodingBits" rel="alternate" title="ATOM" type="application/atom+xml" />
   <%= stylesheet_link_tag "style" %>
   <meta name="viewport" content="width=device-width maximum-scale=1.0">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -23,7 +24,7 @@
     </div>
     <div class="footer">
       <div class="contact">
-        Follow via <a href="/feed.atom">RSS</a>. If you have comments, get in touch on <a href="http://www.twitter.com/zombidev" target="_blank">Twitter</a>. Elixir source for this blog on <a href="https://github.com/mikepack/encodingbits" target="_blank">GitHub</a>.
+        Follow via <a href="http://feeds.feedburner.com/EncodingBits">RSS</a>. If you have comments, get in touch on <a href="http://www.twitter.com/zombidev" target="_blank">Twitter</a>. Elixir source for this blog on <a href="https://github.com/mikepack/encodingbits" target="_blank">GitHub</a>.
       </div>
     </div>
   </div>
