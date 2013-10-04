@@ -1,6 +1,6 @@
 # Practice
 
-As I grow as software engineer, I'm finding it more and more important to practice daily. I'm also discovering that, contrary to the popular proverb, practice does not make perfect. When building software there is no such thing as perfect; it's merely choosing one more-educated solution over another. Practice is the means by which we gain that education.
+As I grow as a software engineer, I'm finding it more and more important to practice daily. I'm also discovering that, contrary to the popular proverb, practice does not make perfect. When building software there is no such thing as perfect; it's merely choosing one more-educated solution over another. Practice is the means by which we gain that education.
 
 Hence, this blog. As I begin to hit what feels like a critical moment in my career, I have to make a decision: should I charge forward and accomplish all that I encounter, or do I slow down and hone in on the essence of engineering. I've deliberated, and deliberated some more. In the quest to sustainably build software for my entire life, I've decided the only way to refine my educated decisions is to slow down and practice.
 
