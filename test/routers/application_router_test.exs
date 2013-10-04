@@ -11,4 +11,14 @@ defmodule ApplicationRouterTest do
     conn = get("/")
     assert conn.status == 200
   end
+
+  test "article not found returns 404" do
+    conn = get("/some-nonexistent-article")
+    assert conn.status == 404
+  end
+
+  test "RSS returns OK" do
+    conn = get("/feed.atom")
+    assert conn.status == 200
+  end
 end

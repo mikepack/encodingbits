@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:encodingbits.com,2013:/feed</id>
+  <link type="text/html" rel="alternate" href="http://encodingbits.com"/>
+  <link type="application/atom+xml" rel="self" href="http://encodingbits.com/feed.atom"/>
+  <title>Encoding Bits</title>
+  <% first = Enum.first(@articles) %>
+  <%= if first do %>
+    <updated><%= "#{first[:year]}-#{String.rjust(first[:month], 2, ?0)}-#{String.rjust(first[:day], 2, ?0)}T00:00:00-07:00" %></updated>
+  <% end %>
+  <%= Enum.map @articles, fn(article) -> %>
+    <entry>
+      <id>tag:encodingbits.com,2013:Article/<%= article[:slug] %></id>
+      <published><%= "#{article[:year]}-#{String.rjust(article[:month], 2, ?0)}-#{String.rjust(article[:day], 2, ?0)}T00:00:00-07:00" %></published>
+      <updated><%= "#{article[:year]}-#{String.rjust(article[:month], 2, ?0)}-#{String.rjust(article[:day], 2, ?0)}T00:00:00-07:00" %></updated>
+      <link type="text/html" rel="alternate" href="http://encodingbits.com/<%= article[:slug] %>"/>
+      <title><%= article[:title] %></title>
+      <content type="html"><%= h(article[:body]) %></content>
+      <author>
+        <name>Mike Pack</name>
+      </author>
+    </entry>
+  <% end %>
+</feed>

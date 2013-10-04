@@ -23,7 +23,7 @@
     </div>
     <div class="footer">
       <div class="contact">
-        If you have comments, get in touch <a href="http://www.twitter.com/zombidev" target="_blank">on twitter</a>. Elixir source for this blog <a href="https://github.com/mikepack/encodingbits" target="_blank">on github</a>.
+        Follow via <a href="/feed.atom">RSS</a>. If you have comments, get in touch on <a href="http://www.twitter.com/zombidev" target="_blank">Twitter</a>. Elixir source for this blog on <a href="https://github.com/mikepack/encodingbits" target="_blank">GitHub</a>.
       </div>
     </div>
   </div>
