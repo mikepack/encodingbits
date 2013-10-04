@@ -5,6 +5,8 @@
   <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
   <%= stylesheet_link_tag "style" %>
+  <meta name="viewport" content="width=device-width maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
 </head>
 <body>
   <div class="main">
@@ -14,6 +16,7 @@
         <div class="subtitle">Musing of a software engineer.</div>
       </div>
       <div class="about">A short-form blog by <a href="http://www.twitter.com/zombidev" target="_blank">Mike Pack</a>.</div>
+      <div style="clear: both;"></div>
     </div>
     <div class="body">
       <%= content_for(:template) %>
