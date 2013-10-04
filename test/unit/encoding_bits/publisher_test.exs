@@ -4,8 +4,7 @@ defmodule EncodingBits.PublisherTest do
   import EncodingBits.Test.FileHelpers
 
   setup do
-    config = EncodingBits.Dynamo.config
-    { :ok, raw_path: config[:dynamo][:raw_articles_path], published_path: config[:dynamo][:published_articles_path] }
+    { :ok, raw_path: EncodingBits.PathHelpers.raw_articles_path, published_path: EncodingBits.PathHelpers.published_articles_path }
   end
 
   teardown meta do

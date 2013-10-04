@@ -2,8 +2,6 @@ defmodule EncodingBits.Dynamo do
   use Dynamo
 
   config :dynamo,
-    root: Path.expand("../../..", __FILE__),
-
     # The environment this Dynamo runs on
     env: Mix.env,
 
@@ -15,10 +13,7 @@ defmodule EncodingBits.Dynamo do
 
     # The route from which static assets are served
     # You can turn off static assets by setting it to false
-    static_route: "/",
-
-    raw_articles_path: Path.expand("../../../articles/published", __FILE__),
-    published_articles_path: Path.expand("../../../priv/published_articles", __FILE__)
+    static_route: "/static"
 
   # Uncomment the lines below to enable the cookie session store
   # config :dynamo,

@@ -1,12 +1,12 @@
 defmodule EncodingBits.Publisher do
   def publish do
-    {_, files} = File.ls(EncodingBits.Dynamo.config[:dynamo][:raw_articles_path])
+    {_, files} = File.ls(EncodingBits.PathHelpers.raw_articles_path)
     publish_file(files)
   end
 
   def update_existing do
-    {_, raw_files} = File.ls(EncodingBits.Dynamo.config[:dynamo][:raw_articles_path])
-    {_, published_files} = File.ls(EncodingBits.Dynamo.config[:dynamo][:published_articles_path])
+    {_, raw_files} = File.ls(EncodingBits.PathHelpers.raw_articles_path)
+    {_, published_files} = File.ls(EncodingBits.PathHelpers.published_articles_path)
 
     update_file(raw_files, published_files)
   end
@@ -60,8 +60,7 @@ defmodule EncodingBits.Publisher do
   defp update_file([], _) do end
 
   defp article_paths do
-    config = EncodingBits.Dynamo.config
-    {config[:dynamo][:raw_articles_path], config[:dynamo][:published_articles_path]}
+    {EncodingBits.PathHelpers.raw_articles_path, EncodingBits.PathHelpers.published_articles_path}
   end
 
   defp published_date_for(file, published_files) do
