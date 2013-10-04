@@ -1,7 +1,7 @@
 defmodule Dynamo.ViewHelpers do
   defmacro stylesheet_link_tag(basename) do
     quote do
-      %s{<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/#{unquote(basename)}.css\">}
+      %s{<link rel="stylesheet" type="text/css" href="/static/#{unquote(basename)}.css">}
     end
   end
 
