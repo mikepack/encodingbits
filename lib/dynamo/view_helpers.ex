@@ -10,4 +10,10 @@ defmodule Dynamo.ViewHelpers do
       %s{<script src="/static/#{unquote(basename)}.js"></script>}
     end
   end
+
+  defmacro link_to(name, href) do
+    quote do
+      %s{<a href="#{unquote(href)}">#{unquote(name)}</a>}
+    end
+  end
 end

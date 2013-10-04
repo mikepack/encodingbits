@@ -8,6 +8,5 @@ defmodule EncodingBits.TestCase do
   # Enable code reloading on test cases
   setup do
     Dynamo.Loader.enable
-    :ok
   end
 end

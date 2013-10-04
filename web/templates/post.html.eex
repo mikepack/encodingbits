@@ -1,3 +1,4 @@
-<% content_for :title, do: @title %>
+<% content_for :title, do: @article[:title] %>
 
-<%= @body %>
+<%= @article[:body] %>
+<span class="published-on">Published on <%= "#{@article[:month]}/#{@article[:day]}/#{@article[:year]}" %></span>

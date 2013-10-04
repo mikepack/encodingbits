@@ -4,7 +4,7 @@ config :dynamo,
   compile_on_demand: true,
   reload_modules: false,
 
-  raw_articles_path: Path.expand("../../../tmp/articles", __FILE__),
-  published_articles_path: Path.expand("../../../tmp/published_articles", __FILE__)
+  raw_articles_path: Path.expand("../../../tmp/test/articles", __FILE__),
+  published_articles_path: Path.expand("../../../tmp/test/published_articles", __FILE__)
 
 config :server, port: 8888

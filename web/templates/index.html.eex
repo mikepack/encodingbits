@@ -1,1 +1,7 @@
-All the files.
+<ul>
+  <%= Enum.map @articles, fn(article) -> %>
+    <li>
+      <%= "#{article[:month]}/#{article[:day]}/#{article[:year]}" %> - <%= link_to article[:title], "/#{article[:slug]}" %>
+    </li>
+  <% end %>
+</ul>

@@ -15,29 +15,17 @@ defmodule ApplicationRouter do
   # forward "/posts", to: PostsRouter
 
   get "/" do
+    conn = conn.assign(:articles, EncodingBits.Articles.all)
     render conn, "index.html"
   end
 
-  get "/:title" do
-    case article_body(title) do
-      {:ok, body} ->
-        conn = conn.assign(:title, title)
-        conn = conn.assign(:body, body)
+  get "/:slug" do
+    case EncodingBits.Articles.find(slug) do
+      {:ok, article} ->
+        conn = conn.assign(:article, article)
         render conn, "post.html"
-      {:not_found} ->
+      {:error, :not_found} ->
         render conn, "404.html"
-    end
-  end
-
-  def article_body(slug) do
-    config = EncodingBits.Dynamo.config
-
-    case File.open("#{config[:dynamo][:published_articles_path]}/#{slug}.html", [:read]) do
-      {:ok, file} ->
-        contents = IO.binread(file, 99999)
-        File.close(file)
-        {:ok, contents}
-      {:error, _} -> {:not_found}
     end
   end
 end
