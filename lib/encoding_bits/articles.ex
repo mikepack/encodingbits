@@ -3,7 +3,7 @@ defmodule EncodingBits.Articles do
     case File.ls(EncodingBits.PathHelpers.published_articles_path) do
       {:error, _} -> []
       {:ok, files} ->
-        Enum.map Enum.reverse(files), fn(filename) ->
+        Enum.map files, fn(filename) ->
           captures = Regex.named_captures(%r/(?<year>.*?)-(?<month>.*?)-(?<day>.*?)-(?<slug>.*?).html/g, filename)
 
           {:ok, file} = File.open("#{EncodingBits.PathHelpers.published_articles_path}/#{filename}", [:read])
