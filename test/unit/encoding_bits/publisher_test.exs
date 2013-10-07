@@ -58,6 +58,22 @@ defmodule EncodingBits.PublisherTest do
     """
   end
 
+  test "#publish does not republish an article on a different day", meta do
+    body = "# The Title"
+
+    File.mkdir_p(meta[:raw_path])
+    write("#{meta[:raw_path]}/the-title.md", body)
+
+    EncodingBits.Publisher.publish
+
+    {year, month, day} = :erlang.date
+    published_filename = change_published_date("the-title", {year - 1, month, day}, meta)
+
+    EncodingBits.Publisher.publish
+
+    assert not File.exists?("#{meta[:published_path]}/#{year}-#{month}-#{day}-the-title.html")
+  end
+
   test "#update_existing reprocesses all published articles, keeping the same published date", meta do
     body1 = """
     # The Title
@@ -77,10 +93,7 @@ defmodule EncodingBits.PublisherTest do
 
     # Changing published date
     {year, month, day} = :erlang.date
-    old_filename = "#{meta[:published_path]}/#{year}-#{month}-#{day}-the-title.html"
-    published_filename = "#{meta[:published_path]}/#{year-1}-#{month}-#{day}-the-title.html"
-    File.cp(old_filename, published_filename)
-    File.rm(old_filename)
+    published_filename = change_published_date("the-title", {year - 1, month, day}, meta)
 
     write("#{meta[:raw_path]}/the-title.md", body2)
 
@@ -93,5 +106,18 @@ defmodule EncodingBits.PublisherTest do
 
     <p>A fix.</p>
     """
+  end
+
+  defp change_published_date(slug, existing_date // :erlang.date, new_date, meta) do
+    {e_year, e_month, e_day} = existing_date
+    {n_year, n_month, n_day} = new_date
+
+    old_filename = "#{meta[:published_path]}/#{e_year}-#{e_month}-#{e_day}-#{slug}.html"
+    published_filename = "#{meta[:published_path]}/#{n_year}-#{n_month}-#{n_day}-#{slug}.html"
+
+    File.cp(old_filename, published_filename)
+    File.rm(old_filename)
+
+    published_filename
   end
 end

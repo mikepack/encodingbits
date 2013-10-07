@@ -27,7 +27,7 @@ defmodule EncodingBits.Publisher do
 
       # Write HTML
       path = "#{published}/#{year}-#{month}-#{day}-#{basename(file)}.html"
-      if not File.exists?(path) or overwrite do
+      if not slug_published?(basename(file)) or overwrite do
         File.mkdir_p(published)
         {:ok, html_file} = File.open(path, [:write])
         IO.binwrite(html_file, html_contents)
@@ -43,6 +43,16 @@ defmodule EncodingBits.Publisher do
   defp basename(filename) do
     captures = Regex.named_captures(%r/(.*?[\/])*(?<basename>.*?)((?:\.\w+\z|\z))/g, filename)
     captures[:basename]
+  end
+
+  defp slug_published?(slug) do
+    case File.ls(EncodingBits.PathHelpers.published_articles_path) do
+      {:error, _} -> false
+      {_, published_files} ->
+        not nil? Enum.find published_files, fn(filename) ->
+          Regex.match?(%r/#{slug}/, filename)
+        end
+    end
   end
 
   defp update_file([file | files], published_files) do
