@@ -15,7 +15,7 @@
       <updated><%= datetime(article) %></updated>
       <link type="text/html" rel="alternate" href="http://encodingbits.com/<%= article[:slug] %>"/>
       <title><%= article[:title] %></title>
-      <content type="html"><%= h(article[:body]) %></content>
+      <content type="html"><%= h(remove_title(article[:body])) %></content>
       <author>
         <name>Mike Pack</name>
       </author>

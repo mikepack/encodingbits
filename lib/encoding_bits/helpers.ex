@@ -14,6 +14,12 @@ defmodule EncodingBits.Helpers do
     end
   end
 
+  defmacro remove_title(content) do
+    quote do
+      Regex.replace(%r/<h1>(.*?)<\/h1>/g, unquote(content), "")
+    end
+  end
+
   def title(content) when is_bitstring(content) do
     " - #{content}"
   end
