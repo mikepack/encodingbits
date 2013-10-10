@@ -20,10 +20,10 @@ defmodule EncodingBits.ArticlesTest do
     body = write_published_file(meta)
     write_published_file(meta, "2001-02-01")
 
-    all = [[slug: "the-title", year: "2001", month: "02",
-                      day: "01", title: "The Title", body: body],
-           [slug: "the-title", year: "2000", month: "02",
-                      day: "01", title: "The Title", body: body]]
+    all = [[slug: "the-title", year: 2001, month: 2,
+            day: 1, title: "The Title", body: body],
+           [slug: "the-title", year: 2000, month: 2,
+            day: 1, title: "The Title", body: body]]
     assert EncodingBits.Articles.all == all
   end
 
@@ -34,10 +34,19 @@ defmodule EncodingBits.ArticlesTest do
   test "#find returns {:ok, article details} when it find an article", meta do
     body = write_published_file(meta)
 
-    details = [slug: "the-title", year: "2000", month: "02",
-               day: "01", title: "The Title", body: body]
+    details = [slug: "the-title", year: 2000, month: 02,
+               day: 01, title: "The Title", body: body]
 
     assert EncodingBits.Articles.find("the-title") == {:ok, details}
+  end
+
+  test "#details returns attributes of an article by its filename" do
+    assert EncodingBits.Articles.details("1-2-3-my-title.html") == [
+      year: 1,
+      month: 2,
+      day: 3,
+      slug: "my-title"
+    ]
   end
 
   defp write_published_file(meta, date // "2000-02-01") do
