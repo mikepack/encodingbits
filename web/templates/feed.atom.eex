@@ -5,15 +5,14 @@
   <link type="text/html" rel="alternate" href="http://encodingbits.com"/>
   <link type="application/atom+xml" rel="self" href="http://encodingbits.com/feed.atom"/>
   <title>Encoding Bits</title>
-  <% first = Enum.first(@articles) %>
-  <%= if first do %>
-    <updated><%= "#{first[:year]}-#{String.rjust(to_string(first[:month]), 2, ?0)}-#{String.rjust(to_string(first[:day]), 2, ?0)}T00:00:00-07:00" %></updated>
+  <%= if first = Enum.first(@articles) do %>
+    <updated><%= datetime(first) %></updated>
   <% end %>
   <%= Enum.map @articles, fn(article) -> %>
     <entry>
       <id>tag:encodingbits.com,2013:Article/<%= article[:slug] %></id>
-      <published><%= "#{article[:year]}-#{String.rjust(to_string(article[:month]), 2, ?0)}-#{String.rjust(to_string(article[:day]), 2, ?0)}T00:00:00-07:00" %></published>
-      <updated><%= "#{article[:year]}-#{String.rjust(to_string(article[:month]), 2, ?0)}-#{String.rjust(to_string(article[:day]), 2, ?0)}T00:00:00-07:00" %></updated>
+      <published><%= datetime(article) %></published>
+      <updated><%= datetime(article) %></updated>
       <link type="text/html" rel="alternate" href="http://encodingbits.com/<%= article[:slug] %>"/>
       <title><%= article[:title] %></title>
       <content type="html"><%= h(article[:body]) %></content>
