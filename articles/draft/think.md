@@ -1,5 +1,0 @@
-# Think
-
-No really, think. Deliberately think. I'm finding that programming is becoming less research-oriented and more intuition-based; most of the decisions I make tend to be derived from instinct, void of thought. This is both a blessing and a curse. A blessing because it requires less effort and allows me to write code faster. A curse because it enables me to stride along in contempt.
-
-Lately I've been setting time apart to do some undisturbed thinking. Nothing else but thinking. No writing, coding, drawing, or elsewise. Just thinking, deeply. Deeply enough that I'm somewhere between brainstorming and meditation. Focusing on a topic and following through with a sequence of ideas. Only when I'm satisfied with my thoughts do I stop thinking. Turning everyday topics into meditative thoughts is likely a useful way to battle contempt.
