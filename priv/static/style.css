@@ -65,6 +65,10 @@ a:visited {
   font-size: 17px;
 }
 
+.body p {
+  line-height: 20px;
+}
+
 .body .published-on {
   font-style: italic;
 }
